@@ -32,12 +32,5 @@ namespace LuftBorn.Application.Common
 
             return new PaginatedList<T>(items, count, pageIndex, pageSize);
         }
-        public static async Task<PaginatedList<T>> Create(IQueryable<T> source, int pageIndex, int pageSize)
-        {
-            var count = source.Count();
-            var items = source.Skip((pageIndex) * pageSize).Take(pageSize).ToList();
-
-            return new PaginatedList<T>(items, count, pageIndex, pageSize);
-        }
     }
 }
