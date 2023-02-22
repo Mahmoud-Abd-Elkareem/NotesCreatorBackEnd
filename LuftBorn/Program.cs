@@ -4,9 +4,7 @@ using LuftBorn.Infrastructure;
 using LuftBorn.Infrastructure.Interfaces;
 using LuftBorn.Infrastructure.Repositry;
 using MediatR;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

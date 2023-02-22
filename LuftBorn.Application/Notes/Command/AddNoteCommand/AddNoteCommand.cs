@@ -1,17 +1,10 @@
 ﻿using LuftBorn.Domain.Model;
 using LuftBorn.Infrastructure.Interfaces;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LuftBorn.Application.Notes.Command.AddNoteCommand
 {
-    public record AddNoteCommand(string nameAr, string nameEn , string DescriptionAr , string DescriptionEn) : IRequest<Result<string>>;
+    public record AddNoteCommand(string nameAr, string nameEn, string DescriptionAr, string DescriptionEn) : IRequest<Result<string>>;
     public class AddNoteCommandHandler : IRequestHandler<AddNoteCommand, Result<string>>
     {
         private readonly IRepository<Note> _noterepo;
@@ -28,7 +21,7 @@ namespace LuftBorn.Application.Notes.Command.AddNoteCommand
             }
             else
             {
-                return Result<string>.Failure(new string[] {"Operation Failed"});
+                return Result<string>.Failure(new string[] { "Operation Failed" });
             }
         }
     }

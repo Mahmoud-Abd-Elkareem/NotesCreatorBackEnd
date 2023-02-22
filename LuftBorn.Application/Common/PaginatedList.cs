@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LuftBorn.Application.Common
 {
-    public class PaginatedList<T> 
+    public class PaginatedList<T>
     {
         public List<T> Items { get; }
         public int PageIndex { get; }

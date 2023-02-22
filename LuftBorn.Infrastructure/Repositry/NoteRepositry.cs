@@ -2,11 +2,6 @@
 using LuftBorn.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LuftBorn.Infrastructure.Repositry
 {
@@ -15,7 +10,7 @@ namespace LuftBorn.Infrastructure.Repositry
         private LuftBornContext _context;
         private IHttpContextAccessor _httpContextAccessor;
 
-        public NoteRepositry(LuftBornContext context , IHttpContextAccessor httpContextAccessor)
+        public NoteRepositry(LuftBornContext context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
             _httpContextAccessor = httpContextAccessor;
@@ -31,7 +26,7 @@ namespace LuftBorn.Infrastructure.Repositry
 
         public async Task<IQueryable<Note>> GetAllAsync()
         {
-            return  _context.Notes.AsQueryable();
+            return _context.Notes.AsQueryable();
         }
 
         public async Task<Note> GetByIdAsync(Guid id)
@@ -44,7 +39,7 @@ namespace LuftBorn.Infrastructure.Repositry
             obj.CreatedBy = _httpContextAccessor.HttpContext.User.Identity.Name ?? "LuftBornUser";
             obj.Created = DateTime.UtcNow;
             _context.Notes.AddAsync(obj);
-            return _context.SaveChanges() == 1 ?  true :  false;
+            return _context.SaveChanges() == 1 ? true : false;
         }
 
         public async Task<bool> UpdateAsync(Note obj)

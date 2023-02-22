@@ -1,8 +1,4 @@
-﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using Microsoft.EntityFrameworkCore;
-using System.Globalization;
-using LuftBorn.Application.Common;
+﻿using LuftBorn.Application.Common;
 
 namespace Booking.Application.Common.Mappings
 {
